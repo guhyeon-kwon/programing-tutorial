@@ -1,0 +1,114 @@
+/* 구글에서 sans-serif 폰트 가져오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex; /* 하위 항목들에게 flex요소를 적용시키기 위하여 영역을 flex로 변경 */
+    justify-content: center; /* 가로를 가운데 정렬 */
+    align-items: center; /* 세로를 가운데 정렬 */
+    min-height: 100vh; /* 최소 높이 사이즈 100vh로 설정. 즉 세로 크기가 줄어들지 않는다는 의미  */
+    background: #fada3e;
+}
+
+.container{
+    position: relative;/* 태그의 위치를 변경하고 싶을 때 relative사용 */
+    /* position이 relative일때 top, left, right, bottom 속성 사용 가능 */
+    width: 1000px;
+    display: grid; /* 해당 영역에서 grid 기능을 사용하기 위하여 display를 grid로 설정 */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* repeat는 반복한다는 의미. auto-fill은 아이템들을 minmax의 최소값에 해당하는 크기로 채운 후
+    나머지 부분을 최소 크기의 가상의 아이템을 할당하여 빈공간으로 남겨두지만 auto-fit은 아이템들의 크기가
+    늘어나서 빈공간을 전부 채운다.
+     */
+}
+
+.container .card{
+    position: relative;
+    display: flex;
+    flex-direction: column; /* 플랙스 컨테이너의 아이템 배치 방향을 지정, column은 세로로 바꾼다. */
+    background: #fff;
+}
+
+.container .card:nth-child(even){ /* .container 밑 짝수번째[nth-child(even)] .card를 선택한다. */
+    flex-direction: column-reverse; /* 컨테이너의 배치 방향을 세로로 바꾸고 배치 순서를 역순으로 한다. */
+}
+
+/* 사진이 들어갈 영역을 relative로 변경하고 가로,세로 크기를 250px로 고정한다. */
+.container .card .imgBx{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #000;
+}
+
+.container .card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 종횡비를 유지하면서 정의된 너비와 높이를 가득 채울때까지 확대된다. */
+}
+
+/* 내용이 들어갈 content영역의 크기를 설정하고 flex 요소로 가운데 정렬한다 */
+.container .card .content{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .card .content div{
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .container{
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        margin: 50px;
+    }
+    .container .card{
+        flex-direction: row;
+        margin: 10px 0;
+    }
+
+    .container .card:nth-child(even){
+        flex-direction: row-reverse;
+        margin: 10px 0;
+    }
+
+    .container .card .imgBx,
+    .container .card .content{
+        width: 50%;
+    }
+
+    }
+
+@media (max-width: 600px) {
+    .container .card{
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .container .card:nth-child(even){
+        flex-direction: column;
+    }
+
+    .container .card .imgBx,
+    .container .card .content{
+        width: 100%;
+    }
+
+    .container .card .content{
+        height: 200px;
+    }
+}
