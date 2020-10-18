@@ -1,0 +1,104 @@
+/* 구글에서 sans-serif 폰트 가져오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ebf5fc;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* 해당 플렉스가 가진 아이템의 줄바꿈 여부 지정, warp는 정방향으로 나열하며 줄바꿈 허용 */
+    width: 1100px;
+}
+
+.container .card
+{
+    width: 320px;
+    margin: 20px;
+    padding: 40px 30px;
+    background: #ebf5fc;
+    border-radius: 40px;
+    box-shadow: -6px -6px 20px rgba(255,255,255,1), /* x축 -6px, y춗 -6px 이동하고 흐려짐 범위는 20px, 색상은 하얀색으로 투명도 없음 */
+                6px 6px 20px rgba(0,0,0,0.1); /* x축 6px, y축 6px 이동하고 흐려짐 범위는 20px, 색상은 검은색으로 투명도 0.1 */
+}
+
+.container .card:hover
+{
+    box-shadow: inset -6px -6px 10px rgba(255,255,255,0.5), /* inset은 박스 안쪽의 그림자를 지정 */
+                inset 6px 6px 20px rgba(0,0,0,0.05);
+}
+
+.container .card .imgBx
+{
+    position: relative;
+    text-align: center;
+}
+
+.container .card .imgBx img
+{
+    max-width: 120px;
+}
+
+.container .card .contentBx
+{
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container .card .contentBx h2
+{
+    color: #32a3b1;
+    font-weight: 700; /* 폰트 굴기 700. 단 폰트가 700 굵기를 지원해야 함 */
+    font-size: 1.4em; /* em : 상위 태그 폰트 사이즈를 1em으로 가진다. 상위태그 폰트 크기가 20px이라면 1.4em은 20 * 1.4 = 28px가 된다. */
+    letter-spacing: 2px; /* letter-spacing : 글자 사이의 간격. 단어 사이의 간격은 word-spacing */
+}
+
+.container .card .contentBx p
+{
+    color: #32a3b1;
+}
+
+.container .card .contentBx a
+{
+    display: inline-block; /* inline-block : 요소는 inline처럼 줄바꿈없이 옆으로 나열하지만 내부는 box처럼 표시함으로써 박스 모양을 유지함 */
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 40px;
+    color: #32a3b1;
+    font-size: 16px;
+    text-decoration: none; /* a태그에 기본적으로 생기는 텍스트 아래 밑줄을 제거한다. */
+    box-shadow: -4px -4px 15px rgba(255,255,255,1),
+                4px 4px 15px rgba(0,0,0,0.1);
+}
+
+.container .card .contentBx a:hover
+{
+    box-shadow: inset -4px -4px 15px rgba(255,255,255,1),
+                inset 4px 4px 15px rgba(0,0,0,0.1);
+}
+
+.container .card a:hover span{
+    display: block;
+    transform: scale(0.98); /* 요소의 크기를 줄임 */
+}
+
+.container .card:hover .imgBx,
+.container .card:hover .contentBx
+{
+    transform: scale(0.98);
+}
