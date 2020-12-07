@@ -1,80 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
-body{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: url("./풍경.jpg");
-    background-size: cover;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url("./풍경.jpg");
+  background-size: cover;
 }
 
-.box{
-    position: absolute; /* position이 static 속성이 아닌 부모를 기준으로 움직입니다. 현제 부모 태그가 없으므로 body태그를 기준으로 움직입니다. */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* 현제 위치에서 x축으로 -50%, y축으로 -50% 이동 */
-    width: 400px;
-    padding: 40px;
-    background: rgba(0,0,0,.8); /* 배경색 설정, 뒤에 .8은 투명도 */
-    box-sizing: border-box; /* 영억 크기 계산식을 border-box 형식으로 변경합니다 */
-    /* border-box 방식 : border-weigth, padding값을 더하지 않고 box크기를 설정 */
-    /* border-box로 변경하지 않으면 영역 디자인이 의도한대로 나오지 않습니다. */
-    box-shadow: 0 15px 25px rgba(0,0,0,.5); /* 박스 뒤쪽에 그림자효과를 추가, 순서대로 x축, y축, 색상 */
-    border-radius: 10px; /* 박스 테두리 굴곡 정도 */
+.box {
+  position: absolute; /* position이 static 속성이 아닌 부모를 기준으로 움직입니다. 현제 부모 태그가 없으므로 body태그를 기준으로 움직입니다. */
+  top: 50%; /* 상단으로부터 간격 50% */
+  left: 50%; /* 왼쪽으로부터 간격 50% */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* 현제 위치에서 x축으로 -50%, y축으로 -50% 이동 */
+  width: 400px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.8); /* 배경색 설정, 뒤에 .8은 투명도 */
+  box-sizing: border-box; /* 영억 크기 계산식을 border-box 형식으로 변경합니다 */
+  /* border-box 방식 : border-weigth, padding값을 더하지 않고 box크기를 설정 */
+  /* border-box로 변경하지 않으면 영역 디자인이 의도한대로 나오지 않습니다. */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5); /* 박스 뒤쪽에 그림자효과를 추가, 순서대로 x축, y축, 색상 */
+  border-radius: 10px; /* 박스 테두리 굴곡 정도 */
 }
 
-.box h2{
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center; /* 텍스트 가운데 정렬 */
+.box h2 {
+  margin: 0 0 30px;
+  padding: 0; /* 박스 안쪽 간격 0 */
+  color: #fff;
+  text-align: center; /* 텍스트 가운데 정렬 */
 }
 
-.box .inputBox{
-    position: relative; /* 태그의 위치를 변경하고 싶을 때 relative사용 */
-    /* position이 relative일때 top, left, right, bottom 속성 사용 가능 */
-    /* 여기서는 inputBox와 아래 label을 붙이기 위해 사용 */
+.box .inputBox {
+  position: relative; /* 태그의 위치를 변경하고 싶을 때 relative사용 */
+  /* position이 relative일때 top, left, right, bottom 속성 사용 가능 */
+  /* 여기서는 inputBox와 아래 label을 붙이기 위해 사용 */
 }
 
-.box .inputBox input{
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none; /* 박스 테두리 제거 */
-    border-bottom: 1px solid #fff; /* 박스 아래쪽에만 테두리 만듬 */
-    outline: none; /* 클릭했을 때 하얀 테두리 생기는거 제거 */
-    background: transparent; /* 배경색 투명하게 */
+.box .inputBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none; /* 박스 테두리 제거 */
+  border-bottom: 1px solid #fff; /* 박스 아래쪽에만 테두리 만듬 */
+  outline: none; /* 클릭했을 때 하얀 테두리 생기는거 제거 */
+  background: transparent; /* 배경색 투명하게 */
 }
 
-.box .inputBox label{
-    position: absolute; /* label을 inputBox박스 기준으로 움직이도록 함 */
-    top: -3px;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none; /* 해당영역이 포인터 이벤트의 대상이 될수 없도록 합니다 */
-    /* label을 마우스로 클릭,드래그 할 수 없도록 함 */
-    transition: .5s; /* 해당 태그의 상태가 변경될경우 변경되는 시간을 0.5초로 설정 */
+.box .inputBox label {
+  position: absolute; /* label을 inputBox박스 기준으로 움직이도록 함 */
+  top: -3px;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none; /* 해당영역이 포인터 이벤트의 대상이 될수 없도록 합니다 */
+  /* label을 마우스로 클릭,드래그 할 수 없도록 함 */
+  transition: 0.5s; /* 해당 태그의 상태가 변경될경우 변경되는 시간을 0.5초로 설정 */
 }
 
 .box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label{ /* .box아래 .inputBox 아래 focus되거나 유효한 값이 입력된(valid) input태그앞에 label태그가 존재한다면 해당하는 모든 label을 선택한다. */
-    top: -20px;
-    left: 0;
-    color: #03a9f4;
-    font-size: 12px;
+.box .inputBox input:valid ~ label {
+  /* .box아래 .inputBox 아래 focus되거나 유효한 값이 입력된(valid) input태그앞에 label태그가 존재한다면 해당하는 모든 label을 선택한다. */
+  top: -20px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
 }
 
-.box input[type="submit"]{ /* .box밑 type값이 submit인 input태그를 선택 */
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #03a9f4;
-    padding: 10px 20px;
-    cursor: pointer; /* 해당 태그에 마우스를 위치했을 때 커서 모양을 손가락 모양으로 변경 */
-    border-radius: 5px;
+.box input[type="submit"] {
+  /* .box밑 type값이 submit인 input태그를 선택 */
+  background: transparent; /* transparent -> 투명 */
+  border: none; /* 박스 테두리 없음(none) */
+  outline: none; /* outline : 레이아웃 크기에 영향받지 않는 눈에만 보이는 테두리, border는 크기에 영향을 줌 */
+  color: #fff;
+  background: #03a9f4;
+  padding: 10px 20px;
+  cursor: pointer; /* 해당 태그에 마우스를 위치했을 때 커서 모양을 손가락 모양으로 변경 */
+  border-radius: 5px;
 }
